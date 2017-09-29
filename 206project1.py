@@ -155,17 +155,17 @@ def mySortPrint(a,col,fileName):
 	newlist = sorted(a, key=lambda k:k[col])
 	wanted_keys = ['First', 'Last', 'Email']
 	newer_list = []
-	# for x in newlist:
-	# 	empty_dict = {}
-	# 	for y in x:
-	# 		if y not in wanted_keys:
-	# 			continue
-	# 		else:
-	# 			empty_dict[y] = x[y]
-	# 	newer_list.append(empty_dict)
-	# # with f as fileName:
-	# 	dict_writer = csv.DictWriter(fileName, wanted_keys)
-	# 	dict_writer.writerows(newer_list)
+	for x in newlist:
+		empty_dict = {}
+		for y in x:
+			if y not in wanted_keys:
+				continue
+			else:
+				empty_dict[y] = x[y]
+		newer_list.append(empty_dict)
+	with f as fileName:
+		dict_writer = csv.DictWriter(fileName, wanted_keys)
+		dict_writer.writerows(newer_list)
 
 
 
